@@ -1,0 +1,5 @@
+Arquivo de edição de letra retirado do Google:
+<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+
+Este é o nome dele, possivelment pode ser usado para procurar qual letra q é:
+font-family: 'Shadows Into Light', cursive;
