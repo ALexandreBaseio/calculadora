@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <meta charset = utf-8> 
+        <title> minha primeira calculadora em html</title>
+    </head>
+
+        <style>
+        
+        button, input, select, textarea {
+          font-family : inherit;
+          font-size   : 100%;
+        }
+        
+        input, textarea, select, button {
+          width : 150px;
+          margin: 0;
+
+          -webkit-box-sizing: border-box; 
+             -moz-box-sizing: border-box;
+                  box-sizing: border-box;
+        }
+        
+        textarea {
+          display : block;
+
+          padding : 10px;
+          margin  : 10px 0 0 -10px;
+          width   : 340px;
+          height  : 360px;
+
+          resize  : none;
+          overflow: auto;
+        }
+        button {
+          padding      : 5px;
+
+          font         : bold .6em sans-serif;
+          border       : 2px solid #333;
+          border-radius: 5px;
+          background   : none;
+
+          cursor       : pointer;
+        }
+
+        button:after {
+          content: " Calcular";
+        }
+
+        button:hover,
+        button:focus {
+          outline   : none;
+          background: #000;
+          color   : #FFF;
+        }
+
+        
+        </style>
+    
+    <body>
+        <form action="#">
+            <table>
+                <tr>  
+                    <th colspan = "2" ><h3>******************* Calculadora JavaScript *******************<h3></th>
+                </tr>
+                <tr>
+                    <td><label for="opcoes">Selecione a operação desejada:</label></td>        
+                    <th><select id="opcoes">
+                        <option> </option>
+                        <option>Soma</option>
+                        <option>Subtração</option>
+                        <option>Divisão</option>
+                        <option>Multiplicação</option>
+                    </select></th>
+                </tr>
+                <tr>
+                    <td><label for="num1">Digite o primeiro valor:</label></td> 
+                    <th><input type="number" id="num1"></th> 
+                </tr>
+                <tr>
+                    <td><label for="num2">Digite o segundo valor:</label></td>
+                    <th><input type="number" id = "num2"></th>
+                </tr>
+                <tr>
+                    <td>&nbsp </td>
+                    <th><button id="boto">  </button></th>
+                </tr>
+                <tr>    
+                    <td><label for="resultado"> Resultado é:</label></td>
+                    <th><span id="resultado"></span></th>
+                </tr>
+            </table>    
+        </form>        
+    </body>
+    
+    <script>
+        document.getElementById("boto").onclick = function() {calcular()};
+        
+        function calcular(){
+            var opcoes = document.getElementById("opcoes").selectedIndex;
+            var num1 = parseInt(document.getElementById("num1").value);
+            var num2 = parseInt(document.getElementById("num2").value);
+            
+            var resultado = 0;
+            
+            if (opcoes == 1) {
+                resultado = num1 + num2;
+            }
+            else if (opcoes == 2) {
+                resultado = num1 - num2;
+            }
+            else if (opcoes == 3) {
+                resultado = num1 / num2;
+            }
+            else if (opcoes == 4) {
+                resultado = num1 * num2;
+            }
+            
+            document.getElementById("resultado").innerHTML = resultado;
+            
+            
+        }
+    </script>
+    
+</html>
+
